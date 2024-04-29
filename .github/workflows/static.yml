@@ -30,23 +30,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: '18'
           cache: 'npm'
       - name: Install dependencies
         run: npm install
       - name: Build
-        # We need to pass the repository name directly to the Vite build command
-        # as the "base" parameter. 
-        # This is necessary because it aligns with how GitHub Pages functions. 
-        # Here's how you can achieve this:
-        run: npm run build -- -- --base /${{ github.event.repository.name }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+        run: npm run build
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
