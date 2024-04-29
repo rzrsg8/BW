@@ -54,14 +54,8 @@ export const navigation = [
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
+    title: "Buy Token",
+    url: "https://app.ston.fi/swap",
     onlyMobile: true,
   },
 ];
