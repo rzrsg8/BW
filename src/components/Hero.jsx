@@ -39,7 +39,7 @@ const Hero = () => {
             Unleash the power of AI within Brainwave. Upgrade your productivity
             with Brainwave, the open AI chat app.
           </p>
-          <Button href="https://app.ston.fi/swap" white>
+          <Button href="https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAqoUtP_bHHRoysYdxFhXhLxcvtBIICP3hXuiHeX5J8e5-3" white>
             Buy Token
           </Button>
         </div>

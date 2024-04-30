@@ -81,7 +81,7 @@ const Header = () => {
           ))}
         </ul>
         
-        <Button className="hidden lg:flex" href="https://app.ston.fi/swap">
+        <Button className="hidden lg:flex" href="https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAqoUtP_bHHRoysYdxFhXhLxcvtBIICP3hXuiHeX5J8e5-3">
           Buy Token 
         </Button>
 

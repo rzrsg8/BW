@@ -55,7 +55,7 @@ export const navigation = [
   {
     id: "4",
     title: "Buy Token",
-    url: "https://app.ston.fi/swap",
+    url: "https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAqoUtP_bHHRoysYdxFhXhLxcvtBIICP3hXuiHeX5J8e5-3",
     onlyMobile: true,
   },
 ];
@@ -289,13 +289,13 @@ export const socials = [
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
-    url: "https://twitter.com/",
+    url: "https://twitter.com/Brainwave431336",
   },
   {
     id: "3",
     title: "Telegram",
     iconUrl: telegram,
-    url: "https://web.telegram.org/",
+    url: "https://t.me/ai_brainwave",
   },  {
     id: "0",
     title: "Discord",
