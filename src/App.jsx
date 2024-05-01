@@ -6,10 +6,12 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 const App = () => {
   return (
     <>
+     <TonConnectUIProvider manifestUrl="https://github.com/rzrsg8/BW/blob/main/src/manifest.json">
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
@@ -19,8 +21,8 @@ const App = () => {
         <Roadmap />
         <Footer />
       </div>
-
       <ButtonGradient />
+      </TonConnectUIProvider>
     </>
   );
 };
