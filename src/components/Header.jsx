@@ -8,6 +8,7 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 import { socials } from "../constants";
+import {TonConnectButton} from "@tonconnect/ui-react";
 
 const Header = () => {
   const pathname = useLocation();
@@ -80,11 +81,8 @@ const Header = () => {
             </a>
           ))}
         </ul>
-        
-        <Button className="hidden lg:flex" href="https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAqoUtP_bHHRoysYdxFhXhLxcvtBIICP3hXuiHeX5J8e5-3">
-          Buy Token 
-        </Button>
-
+        <TonConnectButton className="hidden lg:flex" style={{ float: "right" }}/>
+        <TonConnectButton />
         <Button
           className="ml-auto lg:hidden"
           px="px-3"
