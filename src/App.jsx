@@ -6,12 +6,39 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import {THEME,TonConnectUIProvider } from '@tonconnect/ui-react';
 
 const App = () => {
   return (
     <>
-     <TonConnectUIProvider manifestUrl="https://github.com/rzrsg8/BW/blob/main/src/manifest.json">
+     <TonConnectUIProvider manifestUrl="https://github.com/rzrsg8/BW/blob/main/src/manifest.json"
+     uiPreferences={{ theme: THEME.DARK }}
+          walletsListConfiguration={{
+            includeWallets: [
+              {
+                appName: "safepalwallet",
+                name: "SafePal",
+                imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
+                aboutUrl: "https://www.safepal.com/download",
+                jsBridgeKey: "safepalwallet",
+                platforms: ["ios", "android", "chrome", "firefox"]
+              },
+              {
+                appName: "tonwallet",
+                name: "TON Wallet",
+                imageUrl: "https://wallet.ton.org/assets/ui/qr-logo.png",
+                aboutUrl: "https://chrome.google.com/webstore/detail/ton-wallet/nphplpgoakhhjchkkhmiggakijnkhfnd",
+                universalLink: "https://wallet.ton.org/ton-connect",
+                jsBridgeKey: "tonwallet",
+                bridgeUrl: "https://bridge.tonapi.io/bridge",
+                platforms: ["chrome", "android"]
+              }
+            ]
+          }}
+          actionsConfiguration={{
+              twaReturnUrl: 'https://t.me/Brainwave58_bot/start'
+          }}
+      >
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
