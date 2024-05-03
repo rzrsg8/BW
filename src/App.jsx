@@ -36,7 +36,7 @@ const App = () => {
             ]
           }}
           actionsConfiguration={{
-              twaReturnUrl: 'https://t.me/Brainwave58_bot/start'
+              twaReturnUrl: 'https://brainwave-ton.com/'
           }}
       >
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
