@@ -56,8 +56,7 @@ export const navigation = [
     id: "4",
     title: "Buy Token",
     url: "https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAqoUtP_bHHRoysYdxFhXhLxcvtBIICP3hXuiHeX5J8e5-3",
-    onlyMobile: true,
-  },
+  }
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];

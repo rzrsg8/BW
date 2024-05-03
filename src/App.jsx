@@ -11,7 +11,7 @@ import {THEME,TonConnectUIProvider } from '@tonconnect/ui-react';
 const App = () => {
   return (
     <>
-     <TonConnectUIProvider manifestUrl="https://github.com/rzrsg8/BW/blob/main/src/manifest.json"
+     <TonConnectUIProvider manifestUrl="https://rzrsg8.github.io/jsonDemo/manifest.json"
      uiPreferences={{ theme: THEME.DARK }}
           walletsListConfiguration={{
             includeWallets: [
