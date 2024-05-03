@@ -71,12 +71,14 @@ const Header = () => {
         <Button className="hidden lg:flex" href="https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAqoUtP_bHHRoysYdxFhXhLxcvtBIICP3hXuiHeX5J8e5-3">
           Buy Token 
         </Button>
+        
         <TonConnectButton />
         <Button
           className="ml-auto lg:hidden"
           px="px-3"
           onClick={toggleNavigation}
         >
+
           <MenuSvg openNavigation={openNavigation} />
         </Button>
       </div>
