@@ -14,7 +14,7 @@ const App = () => {
   const [audio, setAudio] = useState(null);
 
   useEffect(() => {
-    const mySound = new Audio('/the-scientist.wav');
+    const mySound = new Audio('/abc.wav');
     setAudio(mySound);
 
     const playSound = async () => {
@@ -60,13 +60,14 @@ const App = () => {
         <Services />
         <Roadmap />
         <Footer />
-      </div>
-      <ButtonGradient />
-      <button 
+        <button 
         onClick={handleButtonClick} 
         className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg">
         {isPlaying ? 'Stop Sound' : 'Play Sound'}
       </button>
+      </div>
+      <ButtonGradient />
+    
     </>
   );
 };
