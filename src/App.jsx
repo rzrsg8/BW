@@ -14,7 +14,7 @@ const App = () => {
   const [audio, setAudio] = useState(null);
 
   useEffect(() => {
-    const mySound = new Audio('/7103856.wav');
+    const mySound = new Audio('/the-scientist.wav');
     setAudio(mySound);
 
     const playSound = async () => {
