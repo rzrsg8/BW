@@ -14,7 +14,7 @@ const App = () => {
   const [audio, setAudio] = useState(null);
 
   useEffect(() => {
-    const mySound = new Audio('/abc.wav');
+    const mySound = new Audio('/pare-chwil-ft-vix-n-gibbs.mp3');
     setAudio(mySound);
 
     const playSound = async () => {
