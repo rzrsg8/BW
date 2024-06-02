@@ -11,10 +11,25 @@ import { THEME, TonConnectUIProvider } from '@tonconnect/ui-react';
 
 const App = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [audio, setAudio] = useState(null);
+  const [playlist, setPlaylist] = useState([
+    '/blue-baked-80-bpm-instrumental-version.mp3',
+    '/abc.wav',
+    '/pare-chwil-ft-vix-n-gibbs.mp3'
+  ]);
 
+  // Funkcja do odtwarzania kolejnego utworu
+  const playNextSong = () => {
+    const nextTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    setCurrentTrackIndex(nextTrackIndex);
+  };
+
+  // Efekt do odtwarzania utworu
   useEffect(() => {
-    const mySound = new Audio('/pare-chwil-ft-vix-n-gibbs.mp3');
+    if (playlist.length === 0) return;
+
+    const mySound = new Audio(playlist[currentTrackIndex]);
     setAudio(mySound);
 
     const playSound = async () => {
@@ -27,13 +42,19 @@ const App = () => {
       }
     };
 
+    mySound.onended = () => {
+      playNextSong();
+    };
+
     playSound();
 
-    mySound.onended = () => {
-      setIsPlaying(false);
+    return () => {
+      mySound.pause();
+      mySound.currentTime = 0;
     };
-  }, []);
+  }, [currentTrackIndex, playlist]);
 
+  // Funkcja do obsługi kliknięcia przycisku play/stop
   const handleButtonClick = () => {
     if (audio) {
       if (isPlaying) {
@@ -60,14 +81,18 @@ const App = () => {
         <Services />
         <Roadmap />
         <Footer />
-        <button 
+      </div>
+      <ButtonGradient />
+      <button 
         onClick={handleButtonClick} 
         className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg">
         {isPlaying ? 'Stop Sound' : 'Play Sound'}
       </button>
-      </div>
-      <ButtonGradient />
-    
+      <button 
+        onClick={playNextSong} 
+        className="next-song-button bg-blue-500 text-white p-4 rounded-full shadow-lg">
+        Next Song
+      </button>
     </>
   );
 };
